@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Muhammad Waqas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style type="text/css">
+        header{
+    border-bottom:1px solid var(--line);
+    background:rgba(13,17,23,0.85);
+    backdrop-filter:blur(8px);
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 0;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:20px;
+  }
+  .logo .mark{
+    width:36px;height:36px;
+    border-radius:9px;
+    background:linear-gradient(145deg,var(--amber),#1f6fa8);
+    display:flex;align-items:center;justify-content:center;
+    color:#0D1117;
+    font-family:'JetBrains Mono',monospace;
+    font-size:14px;
+    font-weight:700;
+  }
+  .logo small{
+    display:block;
+    font-family:'Inter',sans-serif;
+    font-weight:400;
+    font-size:11px;
+    color:var(--text-dim);
+    letter-spacing:.03em;
+  }
+  .navlinks{
+    display:flex;
+    gap:34px;
+    list-style:none;
+  }
+  .navlinks a{
+    color:var(--text);
+    text-decoration:none;
+    font-size:14px;
+    font-weight:500;
+    letter-spacing:.01em;
+    opacity:.85;
+    transition:opacity .2s;
+  }
+  .navlinks a:hover{opacity:1;color:var(--amber);}
+  .navcta{
+    background:var(--amber);
+    color:#0D1117;
+    border:none;
+    padding:11px 22px;
+    border-radius:8px;
+    font-weight:600;
+    font-size:14px;
+    cursor:pointer;
+    font-family:'Inter',sans-serif;
+    transition:transform .15s ease, background .2s;
+  }
+  .navcta:hover{background:#7EC8F2;transform:translateY(-1px);}
+  @media(max-width:900px){ .navlinks{display:none;} 
+}
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #080d15;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+.mw-experience {
+  --mw-bg: #080d15;
+  --mw-card: rgba(15, 23, 35, 0.88);
+  --mw-card-soft: rgba(255, 255, 255, 0.035);
+  --mw-line: rgba(255, 255, 255, 0.12);
+  --mw-text: #f8fafc;
+  --mw-muted: #94a3b8;
+  --mw-accent: #5eead4;
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 100px 0 120px;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(94, 234, 212, 0.09), transparent 27%),
+    radial-gradient(circle at 5% 90%, rgba(59, 130, 246, 0.09), transparent 28%),
+    var(--mw-bg);
+  color: var(--mw-text);
+}
+
+.mw-experience::before {
+  content: "";
+  position: absolute;
+  inset: -40% -15%;
+  z-index: -2;
+  opacity: 0.48;
+  background-image:
+    linear-gradient(rgba(94, 234, 212, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 88px 88px;
+  transform: perspective(700px) rotateX(58deg) translateY(-10%);
+  transform-origin: top center;
+  animation: mw-experience-grid 18s linear infinite;
+}
+
+.mw-experience::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -45%;
+  z-index: -1;
+  width: 35%;
+  opacity: 0.45;
+  background: linear-gradient(90deg, transparent, rgba(94, 234, 212, 0.12), transparent);
+  transform: skewX(-14deg);
+  animation: mw-experience-sweep 12s ease-in-out infinite;
+}
+
+.mw-experience-shell {
+  width: min(1210px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.mw-experience-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.65fr);
+  align-items: end;
+  gap: 90px;
+  margin-bottom: 90px;
+  animation: mw-experience-heading 0.9s ease both;
+}
+
+.mw-experience-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  color: var(--mw-accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+}
+
+.mw-experience-kicker::before {
+  content: "";
+  width: 34px;
+  height: 1px;
+  background: var(--mw-accent);
+}
+
+.mw-experience-heading h2 {
+  max-width: 760px;
+  margin: 0;
+  color: var(--mw-text);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(54px, 7.5vw, 94px);
+  font-weight: 500;
+  line-height: 0.88;
+  letter-spacing: -0.055em;
+}
+
+.mw-experience-heading h2 span {
+  display: block;
+  color: var(--mw-accent);
+}
+
+.mw-experience-heading > p {
+  margin: 0 0 7px;
+  color: #a7b8cd;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.mw-experience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.mw-experience-card {
+  position: relative;
+  overflow: hidden;
+  padding: 34px;
+  border: 1px solid var(--mw-line);
+  border-radius: 22px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.045), transparent 45%),
+    var(--mw-card);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.23);
+  backdrop-filter: blur(12px);
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.mw-experience-card::after {
+  content: "";
+  position: absolute;
+  right: -70px;
+  bottom: -70px;
+  width: 180px;
+  height: 180px;
+  border: 1px solid rgba(94, 234, 212, 0.12);
+  border-radius: 50%;
+  box-shadow: 0 0 70px rgba(94, 234, 212, 0.06);
+  transition: transform 0.45s ease;
+}
+
+.mw-experience-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(94, 234, 212, 0.42);
+  box-shadow: 0 34px 85px rgba(0, 0, 0, 0.32);
+}
+
+.mw-experience-card:hover::after {
+  transform: scale(1.25);
+}
+
+.mw-experience-featured {
+  grid-column: 1 / -1;
+  padding: 42px;
+}
+
+.mw-experience-number {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  color: rgba(255, 255, 255, 0.05);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 86px;
+  line-height: 1;
+}
+
+.mw-experience-topline {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.mw-experience-type {
+  color: var(--mw-accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.mw-experience-duration {
+  padding: 8px 12px;
+  border: 1px solid rgba(94, 234, 212, 0.18);
+  border-radius: 999px;
+  background: rgba(94, 234, 212, 0.07);
+  color: #b5f5ea;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.mw-experience-title-row {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 28px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--mw-line);
+}
+
+.mw-experience-card h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--mw-text);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(30px, 3vw, 46px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.mw-experience-title-row p,
+.mw-experience-place {
+  position: relative;
+  z-index: 1;
+  margin: 9px 0 0;
+  color: var(--mw-muted);
+  font-size: 14px;
+}
+
+.mw-experience-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.mw-experience-tags span {
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  background: var(--mw-card-soft);
+  color: #dce7f4;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.mw-experience-details {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px;
+  padding-top: 30px;
+}
+
+.mw-experience-details h4 {
+  margin: 0 0 16px;
+  color: var(--mw-text);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.mw-experience-details ul {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mw-experience-details li {
+  position: relative;
+  padding-left: 19px;
+  color: #aebed0;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.mw-experience-details li::before {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--mw-accent);
+  box-shadow: 0 0 12px rgba(94, 234, 212, 0.7);
+}
+
+.mw-experience-summary {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+  margin: 24px 0 0;
+  color: #aebed0;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.mw-experience-mini-achievement {
+  position: relative;
+  z-index: 1;
+  margin-top: 30px;
+  padding-top: 22px;
+  border-top: 1px solid var(--mw-line);
+}
+
+.mw-experience-mini-achievement span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--mw-accent);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.mw-experience-mini-achievement p {
+  margin: 0;
+  color: #dce7f4;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+@keyframes mw-experience-grid {
+  from {
+    transform: perspective(700px) rotateX(58deg) translateY(-10%);
+  }
+  to {
+    transform: perspective(700px) rotateX(58deg) translateY(2%);
+  }
+}
+
+@keyframes mw-experience-sweep {
+  0%, 15% {
+    left: -45%;
+  }
+  70%, 100% {
+    left: 115%;
+  }
+}
+
+@keyframes mw-experience-heading {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .mw-experience {
+    padding: 82px 0 95px;
+  }
+
+  .mw-experience-heading {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 64px;
+  }
+
+  .mw-experience-heading > p {
+    max-width: 620px;
+  }
+
+  .mw-experience-grid,
+  .mw-experience-details {
+    grid-template-columns: 1fr;
+  }
+
+  .mw-experience-title-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .mw-experience-tags {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .mw-experience {
+    padding: 68px 0 76px;
+  }
+
+  .mw-experience-shell {
+    width: min(100% - 30px, 1210px);
+  }
+
+  .mw-experience-heading {
+    margin-bottom: 48px;
+  }
+
+  .mw-experience-heading h2 {
+    font-size: clamp(46px, 15vw, 68px);
+  }
+
+  .mw-experience-heading > p {
+    font-size: 15px;
+  }
+
+  .mw-experience-card,
+  .mw-experience-featured {
+    padding: 26px 22px;
+    border-radius: 17px;
+  }
+
+  .mw-experience-number {
+    top: 14px;
+    right: 16px;
+    font-size: 62px;
+  }
+
+  .mw-experience-topline {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .mw-experience-card h3 {
+    font-size: 32px;
+  }
+
+  .mw-experience-details {
+    gap: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mw-experience::before,
+  .mw-experience::after,
+  .mw-experience-heading {
+    animation: none;
+  }
+
+  .mw-experience-card {
+    transition: none;
+  }
+}
+.mw-experience-card {
+  display: block !important;
+  width: 100%;
+  min-width: 0;
+}
+
+.mw-experience-card > * {
+  max-width: 100%;
+}
+    </style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="logo">
+        <div class="mark">MW</div>
+        <div>
+          Muhammad Waqas
+          <small>frontend &amp; wordpress developer</small>
+        </div>
+      </div>
+      <ul class="navlinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="resume.html">Resume</a></li>
+
+      </ul>
+ <a href="file:///C:/Users/desig/Desktop/Waqas%20Developer/contact.html"><button class="navcta">Contact Us</button></a>
+    </nav>
+  </div>
+</header>
+    
+
+  <section class="mw-experience" id="experience">
+    <div class="mw-experience-shell">
+      <header class="mw-experience-heading">
+        <div>
+          <span class="mw-experience-kicker">MY JOURNEY</span>
+          <h2>Experience &amp; <span>Education</span></h2>
+        </div>
+        <p>
+          A practical journey built through freelance website work, personal
+          frontend projects, continuous learning, and academic education.
+        </p>
+      </header>
+
+      <div class="mw-experience-grid">
+        <article class="mw-experience-card mw-experience-featured">
+          <span class="mw-experience-number">01</span>
+          <div class="mw-experience-topline">
+            <span class="mw-experience-type">FREELANCE EXPERIENCE</span>
+            <span class="mw-experience-duration">PROJECT-BASED · ONGOING</span>
+          </div>
+
+          <div class="mw-experience-title-row">
+            <div>
+              <h3>Frontend &amp; WordPress Developer</h3>
+              <p>Independent · Remote</p>
+            </div>
+            <div class="mw-experience-tags">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
+              <span>WordPress</span>
+            </div>
+          </div>
+
+          <div class="mw-experience-details">
+            <div>
+              <h4>Responsibilities</h4>
+              <ul>
+                <li>Develop responsive and user-friendly website interfaces.</li>
+                <li>Build and customize WordPress pages for different business needs.</li>
+                <li>Improve mobile layouts, spacing, styling, and visual consistency.</li>
+                <li>Use custom HTML, CSS, and JavaScript for tailored functionality.</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Achievements</h4>
+              <ul>
+                <li>Built portfolio, publishing, audiobook, and service-based websites.</li>
+                <li>Created reusable sections with responsive layouts and animations.</li>
+                <li>Combined custom frontend code with WordPress development workflows.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="mw-experience-card">
+          <span class="mw-experience-number">02</span>
+          <div class="mw-experience-topline">
+            <span class="mw-experience-type">PERSONAL PROJECTS</span>
+            <span class="mw-experience-duration">CONTINUOUS PRACTICE</span>
+          </div>
+
+          <h3>Frontend Development Projects</h3>
+          <p class="mw-experience-place">FGRF Dawat e Islami</p>
+          <p class="mw-experience-summary">
+            Creating modern website sections and complete interfaces to strengthen
+            responsive design, CSS animation, component styling, and JavaScript skills.
+          </p>
+
+          <div class="mw-experience-mini-achievement">
+            <span>KEY PROGRESS</span>
+            <p>Completed responsive portfolio sections and reusable UI components.</p>
+          </div>
+        </article>
+
+        <article class="mw-experience-card">
+          <span class="mw-experience-number">03</span>
+          <div class="mw-experience-topline">
+            <span class="mw-experience-type">EDUCATION</span>
+            <span class="mw-experience-duration">CURRENTLY ENROLLED</span>
+          </div>
+
+          <h3>Bachelor of Arts (BA)</h3>
+          <p class="mw-experience-place">Allama Iqbal Open University</p>
+          <p class="mw-experience-summary">
+            Continuing academic studies alongside practical frontend and WordPress
+            development, with a focus on improving communication, problem-solving,
+            and professional skills.
+          </p>
+
+          <div class="mw-experience-mini-achievement">
+            <span>CURRENT FOCUS</span>
+            <p>Balancing university education with practical web development.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+    
+
+
+  <script src="script.js"></script>
+</body>
+</html>

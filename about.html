@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Muhammad Waqas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style type="text/css">
+  header{
+    border-bottom:1px solid var(--line);
+    background:rgba(13,17,23,0.85);
+    backdrop-filter:blur(8px);
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 0;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:20px;
+  }
+  .logo .mark{
+    width:36px;height:36px;
+    border-radius:9px;
+    background:linear-gradient(145deg,var(--amber),#1f6fa8);
+    display:flex;align-items:center;justify-content:center;
+    color:#0D1117;
+    font-family:'JetBrains Mono',monospace;
+    font-size:14px;
+    font-weight:700;
+  }
+  .logo small{
+    display:block;
+    font-family:'Inter',sans-serif;
+    font-weight:400;
+    font-size:11px;
+    color:var(--text-dim);
+    letter-spacing:.03em;
+  }
+  .navlinks{
+    display:flex;
+    gap:34px;
+    list-style:none;
+  }
+  .navlinks a{
+    color:var(--text);
+    text-decoration:none;
+    font-size:14px;
+    font-weight:500;
+    letter-spacing:.01em;
+    opacity:.85;
+    transition:opacity .2s;
+  }
+  .navlinks a:hover{opacity:1;color:var(--amber);}
+  .navcta{
+    background:var(--amber);
+    color:#0D1117;
+    border:none;
+    padding:11px 22px;
+    border-radius:8px;
+    font-weight:600;
+    font-size:14px;
+    cursor:pointer;
+    font-family:'Inter',sans-serif;
+    transition:transform .15s ease, background .2s;
+  }
+  .navcta:hover{background:#7EC8F2;transform:translateY(-1px);}
+  @media(max-width:900px){ .navlinks{display:none;} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="logo">
+        <div class="mark">MW</div>
+        <div>
+          Muhammad Waqas
+          <small>frontend &amp; wordpress developer</small>
+        </div>
+      </div>
+      <ul class="navlinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="resume.html">Resume</a></li>
+
+      </ul>
+          <a href="file:///C:/Users/desig/Desktop/Waqas%20Developer/contact.html"><button class="navcta">Contact Us</button></a>
+
+    </nav>
+  </div>
+</header>
+
+
+
+<section class="mw-about-section" id="about">
+  <div class="mw-about-container">
+
+    <!-- Left Side -->
+    <div class="mw-about-visual">
+      <div class="mw-image-frame">
+        <!-- Yahan apni image ka path add karein -->
+        <img 
+          src="Assets/homepage.png" 
+          alt="Muhammad Waqas - Frontend Developer"
+        >
+
+        <div class="mw-experience-card">
+          <span class="mw-status-dot"></span>
+          Available for Opportunities
+        </div>
+      </div>
+
+      <div class="mw-code-decoration">
+        <span>&lt;developer&gt;</span>
+        <strong>Muhammad Waqas</strong>
+        <span>&lt;/developer&gt;</span>
+      </div>
+    </div>
+
+    <!-- Right Side -->
+    <div class="mw-about-content">
+      <span class="mw-section-label">ABOUT ME</span>
+
+      <h2>
+        Turning ideas into
+        <span>modern websites.</span>
+      </h2>
+
+      <p>
+        My name is <strong>Muhammad Waqas</strong>, and I am currently
+        pursuing my Bachelor of Arts degree from Allama Iqbal Open University.
+        Alongside my studies, I work as a frontend developer, creating modern,
+        responsive, and user-friendly websites through custom coding.
+      </p>
+
+      <p>
+        I specialize in HTML, CSS, JavaScript, responsive design, and WordPress
+        development. I can build business websites, landing pages, portfolio
+        websites, and custom web sections. I am currently open to freelance
+        projects, remote work, internships, and professional opportunities.
+      </p>
+
+      <div class="mw-skill-list">
+        <span>HTML5</span>
+        <span>CSS3</span>
+        <span>JavaScript</span>
+        <span>Responsive Design</span>
+        <span>WordPress</span>
+        <span>Elementor</span>
+      </div>
+
+      <a href="#contact" class="mw-about-button">
+        Let’s Work Together
+        <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="about-slider">
+  <div class="wrap">
+    <h2 class="slider-heading">
+      Websites that are
+      <span class="slider-word-wrap">
+        <span id="slider-word" class="slider-word">fast.</span>
+      </span>
+    </h2>
+  </div>
+</section>
+<script src="script.js"></script>
+<script src="about.js"></script>
+</body>
+</html>

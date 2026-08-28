@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Muhammad Waqas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style type="text/css">
+  .mw-ref-projects {
+    --mwr-purple: #514be0;
+    --mwr-purple-dark: #242268;
+    --mwr-yellow: #ffbd00;
+    --mwr-white: #fff;
+    --mwr-ink: #1c2430;
+    position: relative;
+    width: 100%;
+    padding: 78px 0 110px;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 88% 8%, rgba(94,234,212,.08), transparent 25%),
+      radial-gradient(circle at 8% 92%, rgba(81,75,224,.1), transparent 27%),
+      #080d15;
+    color: var(--mwr-ink);
+    font-family: Inter, Arial, sans-serif;
+  }
+
+  .mw-ref-projects *, .mw-ref-projects *::before, .mw-ref-projects *::after { box-sizing: border-box; }
+  .mw-ref-projects::before {
+    content: "";
+    position: absolute;
+    inset: -35% -15%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: .52;
+    background-image:
+      linear-gradient(rgba(94,234,212,.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+    background-size: 90px 90px;
+    transform: perspective(700px) rotateX(58deg) translateY(-12%);
+    transform-origin: top center;
+    animation: mwRefGridMove 16s linear infinite;
+  }
+
+  .mw-ref-projects::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -45%;
+    z-index: 0;
+    width: 38%;
+    pointer-events: none;
+    opacity: .55;
+    background: linear-gradient(90deg, transparent, rgba(94,234,212,.11), transparent);
+    transform: skewX(-14deg);
+    animation: mwRefLightSweep 11s ease-in-out infinite;
+  }
+
+  .mw-ref-shell { position: relative; z-index: 1; width: min(1210px, calc(100% - 48px)); margin: 0 auto; }
+
+  .mw-ref-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, .65fr);
+    align-items: end;
+    gap: 90px;
+    margin-bottom: 110px;
+    animation: mwRefHeadingIn .9s ease both;
+  }
+
+  .mw-ref-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    color: #5eead4;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .23em;
+  }
+
+  .mw-ref-kicker::before {
+    content: "";
+    width: 35px;
+    height: 1px;
+    background: currentColor;
+  }
+
+  .mw-ref-heading h2 {
+    margin: 0;
+    color: #fff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(66px, 7.5vw, 108px);
+    font-weight: 700;
+    line-height: .78;
+    letter-spacing: -.07em;
+  }
+
+  .mw-ref-heading h2 span {
+    display: block;
+    margin-top: 15px;
+    color: #5eead4;
+    font-weight: 400;
+  }
+
+  .mw-ref-heading > p {
+    max-width: 470px;
+    margin: 0 0 3px;
+    color: #a6b0bf;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  .mw-ref-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; gap: 88px 64px; }
+
+  .mw-ref-card {
+    position: relative;
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    padding: 0 22px 24px;
+    border: 1px solid rgba(255,255,255,.7);
+    border-radius: 14px;
+    background: var(--mwr-white);
+    box-shadow: 0 17px 40px rgba(27,25,102,.2);
+    transition: transform .4s cubic-bezier(.2,.7,.2,1), box-shadow .4s ease;
+  }
+
+  .mw-ref-card:hover { transform: translateY(-10px); box-shadow: 0 28px 60px rgba(27,25,102,.3); }
+
+  .mw-ref-image {
+    position: relative;
+    width: calc(100% + 8px);
+    height: 205px;
+    margin: -45px -4px 25px;
+    overflow: hidden;
+    border: 7px solid rgba(255,255,255,.92);
+    border-radius: 16px;
+    background: #111729;
+    box-shadow: 0 14px 28px rgba(20,23,46,.25);
+  }
+
+  .mw-ref-image img { position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%; display: block; object-fit: cover; object-position: top center; transition: transform .65s cubic-bezier(.2,.7,.2,1); }
+  .mw-ref-card:hover .mw-ref-image img { transform: scale(1.055); }
+
+  .mw-ref-fallback { position: absolute; inset: 0; z-index: 1; display: flex; align-items: flex-start; justify-content: flex-end; flex-direction: column; padding: 22px; background: linear-gradient(135deg, rgba(81,75,224,.82), rgba(29,34,67,.96)); color: #fff; }
+  .mw-ref-card:nth-child(3n + 2) .mw-ref-fallback { background: linear-gradient(135deg, #171d2d, #303c5f); }
+  .mw-ref-card:nth-child(3n) .mw-ref-fallback { background: linear-gradient(135deg, #157466, #182a3c); }
+  .mw-ref-fallback::after { content: ""; position: absolute; top: 42px; right: 22px; width: 42%; height: 76px; border: 1px solid rgba(255,255,255,.15); border-radius: 8px; background: linear-gradient(90deg, rgba(255,255,255,.15) 28%, transparent 28%) 0 0 / 26px 16px, rgba(255,255,255,.08); }
+  .mw-browser-bar { position: absolute; top: 0; right: 0; left: 0; display: flex; gap: 5px; height: 25px; padding: 9px 11px; background: rgba(5,8,16,.35); }
+  .mw-browser-bar i { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,.55); }
+  .mw-ref-fallback strong { position: relative; z-index: 2; max-width: 75%; font-size: 20px; line-height: 1.15; }
+
+  .mw-ref-content { display: flex; flex: 1; flex-direction: column; }
+  .mw-ref-number { margin-bottom: 8px; color: var(--mwr-purple); font-size: 10px; font-weight: 800; letter-spacing: .15em; }
+  .mw-ref-content h3 { margin: 0 0 15px; color: var(--mwr-ink); font-size: 23px; font-weight: 700; line-height: 1.28; letter-spacing: -.025em; }
+  .mw-ref-content > p { margin: 0 0 19px; color: #303743; font-family: "Arial Narrow", Arial, sans-serif; font-size: 12px; font-weight: 700; line-height: 1.68; }
+
+  .mw-ref-meta { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 10px; margin-bottom: 17px; padding: 11px 0; border-top: 1px solid #e5e8ed; border-bottom: 1px solid #e5e8ed; }
+  .mw-ref-meta span { color: #8a919b; font-size: 9px; font-weight: 800; letter-spacing: .1em; }
+  .mw-ref-meta strong { color: #333b47; font-size: 11px; line-height: 1.4; }
+
+  .mw-ref-tech { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 22px; }
+  .mw-ref-tech span { padding: 6px 9px; border-radius: 999px; background: #eeeffd; color: #3c399e; font-size: 9px; font-weight: 800; }
+  .mw-ref-actions { display: grid; grid-template-columns: 1fr .95fr; gap: 12px; margin-top: auto; }
+
+  .mw-ref-actions a { display: flex; min-height: 44px; align-items: center; justify-content: center; padding: 11px 12px; border-radius: 8px; font-size: 10px; font-weight: 900; line-height: 1.2; text-align: center; text-decoration: none; box-shadow: 0 5px 13px rgba(35,34,91,.14); transition: transform .25s ease, box-shadow .25s ease, filter .25s ease; }
+  .mw-ref-actions a:hover { transform: translateY(-3px); box-shadow: 0 9px 20px rgba(35,34,91,.22); filter: brightness(1.06); }
+  .mw-github { background: var(--mwr-purple-dark); color: #fff; }
+  .mw-demo { background: var(--mwr-yellow); color: #fff; }
+
+  .mw-ref-card.mw-ref-ready { opacity: 0; transform: translateY(45px) scale(.97); }
+  .mw-ref-card.mw-ref-ready.mw-ref-visible { opacity: 1; transform: none; transition: opacity .75s ease var(--mw-delay, 0ms), transform .75s cubic-bezier(.2,.7,.2,1) var(--mw-delay, 0ms), box-shadow .4s ease; }
+
+  @keyframes mwRefGridMove {
+    to { background-position: 90px 90px; }
+  }
+
+  @keyframes mwRefLightSweep {
+    0%, 12% { left: -45%; }
+    72%, 100% { left: 115%; }
+  }
+
+  @keyframes mwRefHeadingIn {
+    from { opacity: 0; transform: translateY(28px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  @media (max-width: 1050px) {
+    .mw-ref-heading { grid-template-columns: 1fr; gap: 28px; }
+    .mw-ref-heading > p { max-width: 640px; }
+    .mw-ref-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 88px 42px; }
+  }
+
+  @media (max-width: 680px) {
+    .mw-ref-projects { padding: 68px 0 88px; }
+    .mw-ref-shell { width: 100%; padding: 0 20px; }
+    .mw-ref-heading { gap: 24px; margin-bottom: 90px; }
+    .mw-ref-kicker { margin-bottom: 20px; }
+    .mw-ref-heading h2 { max-width: 100%; font-size: clamp(54px, 16vw, 72px); line-height: .82; overflow-wrap: break-word; }
+    .mw-ref-heading h2 span { margin-top: 12px; }
+    .mw-ref-heading > p { font-size: 15px; }
+    .mw-ref-grid { grid-template-columns: 1fr; gap: 88px; }
+    .mw-ref-card { width: 100%; max-width: 430px; margin: 0 auto; }
+    .mw-ref-image { height: 220px; }
+  }
+
+  @media (max-width: 380px) {
+    .mw-ref-shell { padding: 0 16px; }
+    .mw-ref-card { padding-right: 17px; padding-left: 17px; }
+    .mw-ref-image { height: 190px; }
+    .mw-ref-content h3 { font-size: 21px; }
+    .mw-ref-actions { grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mw-ref-projects *, .mw-ref-projects *::before, .mw-ref-projects *::after { animation: none !important; transition-duration: .01ms !important; }
+  }
+</style>
+</head>
+<body>
+    
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="logo">
+        <div class="mark">MW</div>
+        <div>
+          Muhammad Waqas
+          <small>frontend &amp; wordpress developer</small>
+        </div>
+      </div>
+      <ul class="navlinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="resume.html">Resume</a></li>
+
+      </ul>
+            <a href="file:///C:/Users/desig/Desktop/Waqas%20Developer/contact.html"><button class="navcta">Contact Us</button></a>
+
+    </nav>
+  </div>
+</header>
+<section class="mw-ref-projects" id="projects">
+  <div class="mw-ref-shell">
+    <header class="mw-ref-heading">
+      <div class="mw-ref-title">
+        <span class="mw-ref-kicker">FEATURED WORK</span>
+        <h2>Selected <span>Projects</span></h2>
+      </div>
+
+      <p>
+        A collection of modern, responsive, and user-friendly websites built
+        with clean code, thoughtful design, and attention to performance.
+      </p>
+    </header>
+
+    <div class="mw-ref-grid">
+
+      <!-- PROJECT 01 -->
+      <article class="mw-ref-card">
+        <div class="mw-ref-image">
+          <div class="mw-ref-fallback"><span class="mw-browser-bar"><i></i><i></i><i></i></span><strong>Business Website</strong></div>
+          <img src="Assets/bluebookghost.png" alt="Horizon Legal Group website screenshot" loading="lazy" onerror="this.remove()">
+        </div>
+        <div class="mw-ref-content">
+          <span class="mw-ref-number">PROJECT 01</span>
+          <h3>Blue Book Ghostwritting</h3>
+          <p>A MODERN BOOK PUBLISHING WEBSITE DESIGNED TO SHOWCASE PROFESSIONAL PUBLISHING, EDITING, BOOK DESIGN, MARKETING, AND GLOBAL DISTRIBUTION SERVICES FOR AUTHORS.</p>
+          <div class="mw-ref-meta"><span>ROLE</span><strong>Frontend &amp; WordPress Developer</strong></div>
+          <div class="mw-ref-tech"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>WordPress</span></div>
+          <div class="mw-ref-actions"><a class="mw-github" href="#" target="_blank" rel="noopener">VIEW ON GITHUB</a><a class="mw-demo" href="https://bluebookghostwriting.com/" target="_blank" rel="noopener">LIVE DEMO</a></div>
+        </div>
+      </article>
+
+      <!-- PROJECT 02 -->
+      <article class="mw-ref-card">
+        <div class="mw-ref-image">
+          <div class="mw-ref-fallback"><span class="mw-browser-bar"><i></i><i></i><i></i></span><strong>E-commerce Store</strong></div>
+          <img src="Assets/bluebookpress.png" alt="NovaCart online store screenshot" loading="lazy" onerror="this.remove()">
+        </div>
+        <div class="mw-ref-content">
+          <span class="mw-ref-number">PROJECT 02</span>
+          <h3>Blue Book Press</h3>
+          <p>A MODERN PUBLISHING WEBSITE CREATED TO PRESENT PRINT, EBOOK, AND AUDIOBOOK SERVICES, GUIDE AUTHORS THROUGH THE PUBLISHING PROCESS, AND HELP THEIR STORIES REACH READERS WORLDWIDE.</p>
+          <div class="mw-ref-meta"><span>ROLE</span><strong>Frontend &amp; WordPress Developer</strong></div>
+          <div class="mw-ref-tech"><span>React</span><span>Tailwind CSS</span><span>REST API</span></div>
+          <div class="mw-ref-actions"><a class="mw-github" href="#" target="_blank" rel="noopener">VIEW ON GITHUB</a><a class="mw-demo" href="https://bluebookpress.com" target="_blank" rel="noopener">LIVE DEMO</a></div>
+        </div>
+      </article>
+
+      <!-- PROJECT 03 -->
+      <article class="mw-ref-card">
+        <div class="mw-ref-image">
+          <div class="mw-ref-fallback"><span class="mw-browser-bar"><i></i><i></i><i></i></span><strong>Analytics Dashboard</strong></div>
+          <img src="Assets/podiumaudio.png" alt="Pulse Analytics dashboard screenshot" loading="lazy" onerror="this.remove()">
+        </div>
+        <div class="mw-ref-content">
+          <span class="mw-ref-number">PROJECT 03</span>
+          <h3>Podium Audio Studio</h3>
+          <p>A MODERN AUDIOBOOK PRODUCTION WEBSITE CREATED TO SHOWCASE PROFESSIONAL NARRATION, AUDIO EDITING, MASTERING, PUBLISHING, AND GLOBAL DISTRIBUTION SERVICES FOR AUTHORS.</p>
+          <div class="mw-ref-meta"><span>ROLE</span><strong>Frontend &amp; WordPress Developer</strong></div>
+          <div class="mw-ref-tech"><span>React</span><span>Chart.js</span><span>CSS Grid</span></div>
+          <div class="mw-ref-actions"><a class="mw-github" href="" target="_blank" rel="noopener">VIEW ON GITHUB</a><a class="mw-demo" href="https://podiumaudio.studio/" target="_blank" rel="noopener">LIVE DEMO</a></div>
+        </div>
+      </article>
+
+      <!-- PROJECT 04 -->
+      <article class="mw-ref-card">
+        <div class="mw-ref-image">
+          <div class="mw-ref-fallback"><span class="mw-browser-bar"><i></i><i></i><i></i></span><strong>SaaS Landing Page</strong></div>
+          <img src="images/project-04.jpg" alt="FlowPilot SaaS website screenshot" loading="lazy" onerror="this.remove()">
+        </div>
+        <div class="mw-ref-content">
+          <span class="mw-ref-number">PROJECT 04</span>
+          <h3>FlowPilot SaaS</h3>
+          <p>A HIGH-CONVERTING SAAS LANDING PAGE WITH PRODUCT FEATURES, INTERACTIVE PRICING, TESTIMONIALS, AND CLEAR CALLS TO ACTION.</p>
+          <div class="mw-ref-meta"><span>ROLE</span><strong>Frontend Developer</strong></div>
+          <div class="mw-ref-tech"><span>Next.js</span><span>TypeScript</span><span>Tailwind CSS</span></div>
+          <div class="mw-ref-actions"><a class="mw-github" href="#" target="_blank" rel="noopener">VIEW ON GITHUB</a><a class="mw-demo" href="#" target="_blank" rel="noopener">LIVE DEMO</a></div>
+        </div>
+      </article>
+
+      <!-- PROJECT 05 -->
+      <article class="mw-ref-card">
+        <div class="mw-ref-image">
+          <div class="mw-ref-fallback"><span class="mw-browser-bar"><i></i><i></i><i></i></span><strong>Weather API App</strong></div>
+          <img src="images/project-05.jpg" alt="WeatherSphere application screenshot" loading="lazy" onerror="this.remove()">
+        </div>
+        <div class="mw-ref-content">
+          <span class="mw-ref-number">PROJECT 05</span>
+          <h3>WeatherSphere</h3>
+          <p>A LIVE WEATHER APPLICATION FEATURING CITY SEARCH, GEOLOCATION, MULTI-DAY FORECASTS, AND DYNAMIC WEATHER-BASED VISUALS.</p>
+          <div class="mw-ref-meta"><span>ROLE</span><strong>Frontend Developer</strong></div>
+          <div class="mw-ref-tech"><span>JavaScript</span><span>Weather API</span><span>CSS3</span></div>
+          <div class="mw-ref-actions"><a class="mw-github" href="#" target="_blank" rel="noopener">VIEW ON GITHUB</a><a class="mw-demo" href="#" target="_blank" rel="noopener">LIVE DEMO</a></div>
+        </div>
+      </article>
+
+      <!-- PROJECT 06 -->
+      <article class="mw-ref-card">
+        <div class="mw-ref-image">
+          <div class="mw-ref-fallback"><span class="mw-browser-bar"><i></i><i></i><i></i></span><strong>Interactive Portfolio</strong></div>
+          <img src="images/project-06.jpg" alt="Creative Motion portfolio screenshot" loading="lazy" onerror="this.remove()">
+        </div>
+        <div class="mw-ref-content">
+          <span class="mw-ref-number">PROJECT 06</span>
+          <h3>Creative Motion</h3>
+          <p>AN INTERACTIVE PERSONAL PORTFOLIO WITH SMOOTH SCROLL ANIMATIONS, RESPONSIVE PROJECT STORIES, AND A CLEAN MODERN INTERFACE.</p>
+          <div class="mw-ref-meta"><span>ROLE</span><strong>Frontend &amp; Animation Developer</strong></div>
+          <div class="mw-ref-tech"><span>HTML5</span><span>Sass</span><span>JavaScript</span><span>CSS Animation</span></div>
+          <div class="mw-ref-actions"><a class="mw-github" href="#" target="_blank" rel="noopener">VIEW ON GITHUB</a><a class="mw-demo" href="#" target="_blank" rel="noopener">LIVE DEMO</a></div>
+        </div>
+      </article>
+
+      <!-- PROJECT 07 -->
+      <article class="mw-ref-card">
+        <div class="mw-ref-image">
+          <div class="mw-ref-fallback"><span class="mw-browser-bar"><i></i><i></i><i></i></span><strong>WordPress Agency</strong></div>
+          <img src="images/project-07.jpg" alt="Finora Consulting WordPress website screenshot" loading="lazy" onerror="this.remove()">
+        </div>
+        <div class="mw-ref-content">
+          <span class="mw-ref-number">PROJECT 07</span>
+          <h3>Finora Consulting</h3>
+          <p>A CUSTOM WORDPRESS AGENCY WEBSITE WITH RESPONSIVE SERVICE SECTIONS, LEAD FORMS, FAST PERFORMANCE, AND EASY CONTENT MANAGEMENT.</p>
+          <div class="mw-ref-meta"><span>ROLE</span><strong>WordPress Frontend Developer</strong></div>
+          <div class="mw-ref-tech"><span>WordPress</span><span>Elementor</span><span>Custom CSS</span></div>
+          <div class="mw-ref-actions"><a class="mw-github" href="#" target="_blank" rel="noopener">VIEW ON GITHUB</a><a class="mw-demo" href="#" target="_blank" rel="noopener">LIVE DEMO</a></div>
+        </div>
+      </article>
+
+      <!-- PROJECT 08 -->
+      <article class="mw-ref-card">
+        <div class="mw-ref-image">
+          <div class="mw-ref-fallback"><span class="mw-browser-bar"><i></i><i></i><i></i></span><strong>Restaurant Website</strong></div>
+          <img src="images/project-08.jpg" alt="UrbanTaste restaurant website screenshot" loading="lazy" onerror="this.remove()">
+        </div>
+        <div class="mw-ref-content">
+          <span class="mw-ref-number">PROJECT 08</span>
+          <h3>UrbanTaste</h3>
+          <p>A VISUALLY ENGAGING RESTAURANT WEBSITE WITH AN INTERACTIVE MENU, RESERVATION EXPERIENCE, IMAGE GALLERY, AND MOBILE-FIRST DESIGN.</p>
+          <div class="mw-ref-meta"><span>ROLE</span><strong>Frontend Developer</strong></div>
+          <div class="mw-ref-tech"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+          <div class="mw-ref-actions"><a class="mw-github" href="#" target="_blank" rel="noopener">VIEW ON GITHUB</a><a class="mw-demo" href="#" target="_blank" rel="noopener">LIVE DEMO</a></div>
+        </div>
+      </article>
+
+      <!-- PROJECT 09 -->
+      <article class="mw-ref-card">
+        <div class="mw-ref-image">
+          <div class="mw-ref-fallback"><span class="mw-browser-bar"><i></i><i></i><i></i></span><strong>Task Manager</strong></div>
+          <img src="images/project-09.jpg" alt="TaskFlow task manager screenshot" loading="lazy" onerror="this.remove()">
+        </div>
+        <div class="mw-ref-content">
+          <span class="mw-ref-number">PROJECT 09</span>
+          <h3>TaskFlow Manager</h3>
+          <p>A PRODUCTIVITY WEB APPLICATION WITH DRAG-AND-DROP TASKS, PRIORITY FILTERS, STATUS BOARDS, AND LOCAL DATA PERSISTENCE.</p>
+          <div class="mw-ref-meta"><span>ROLE</span><strong>Frontend Application Developer</strong></div>
+          <div class="mw-ref-tech"><span>JavaScript</span><span>LocalStorage</span><span>CSS Grid</span></div>
+          <div class="mw-ref-actions"><a class="mw-github" href="#" target="_blank" rel="noopener">VIEW ON GITHUB</a><a class="mw-demo" href="#" target="_blank" rel="noopener">LIVE DEMO</a></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+<script>
+  (() => {
+    const section = document.querySelector('.mw-ref-projects');
+    if (!section) return;
+
+    const cards = [...section.querySelectorAll('.mw-ref-card')];
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      cards.forEach((card) => card.classList.add('mw-ref-visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('mw-ref-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12 });
+
+    cards.forEach((card, index) => {
+      card.classList.add('mw-ref-ready');
+      card.style.setProperty('--mw-delay', `${(index % 3) * 100}ms`);
+      observer.observe(card);
+    });
+  })();
+</script>
+<script src="script.js"></script>
+</body>
+</html>
