@@ -8,110 +8,6 @@
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style type="text/css">
-:root {
-  --bg: #0c111b;
-  --panel: #111925;
-  --text: #f7f8fa;
-  --text-dim: #9ba5b5;
-  --line: rgba(255, 255, 255, 0.1);
-  --amber: #5eead4;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  min-width: 320px;
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Inter', Arial, sans-serif;
-}
-
-.wrap {
-  width: min(1180px, calc(100% - 48px));
-  margin: 0 auto;
-}
-
-header{
-    border-bottom:1px solid var(--line);
-    background:rgba(13,17,23,0.85);
-    backdrop-filter:blur(8px);
-    position:sticky;
-    top:0;
-    z-index:50;
-  }
-  nav{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:18px 0;
-  }
-  .logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-family:'Space Grotesk',sans-serif;
-    font-weight:700;
-    font-size:20px;
-  }
-  .logo .mark{
-    width:36px;height:36px;
-    border-radius:9px;
-    background:linear-gradient(145deg,var(--amber),#1f6fa8);
-    display:flex;align-items:center;justify-content:center;
-    color:#0D1117;
-    font-family:'JetBrains Mono',monospace;
-    font-size:14px;
-    font-weight:700;
-  }
-  .logo small{
-    display:block;
-    font-family:'Inter',sans-serif;
-    font-weight:400;
-    font-size:11px;
-    color:var(--text-dim);
-    letter-spacing:.03em;
-  }
-  .navlinks{
-    display:flex;
-    gap:34px;
-    list-style:none;
-  }
-  .navlinks a{
-    color:var(--text);
-    text-decoration:none;
-    font-size:14px;
-    font-weight:500;
-    letter-spacing:.01em;
-    opacity:.85;
-    transition:opacity .2s;
-  }
-  .navlinks a:hover{opacity:1;color:var(--amber);}
-  .navcta{
-    background:var(--amber);
-    color:#0D1117;
-    border:none;
-    padding:11px 22px;
-    border-radius:8px;
-    font-weight:600;
-    font-size:14px;
-    cursor:pointer;
-    font-family:'Inter',sans-serif;
-    transition:transform .15s ease, background .2s;
-  }
-  .navcta:hover{background:#7EC8F2;transform:translateY(-1px);}
-  @media(max-width:900px){ .navlinks{display:none;} }
-
-  /* =============================
-   MUHAMMAD WAQAS - SKILLS SECTION
-================================ */
-
 .mw-skills-section {
   --mw-skills-bg: #0c111b;
   --mw-skills-card: #111925;
@@ -428,24 +324,21 @@ header{
     transition: none !important;
   }
 }
-
 </style>
-    
 </head>
-
 <body>
-
-
 <header>
   <div class="wrap">
     <nav>
+      
       <div class="logo">
         <div class="mark">MW</div>
-        <div>
+        <div class="logo-text">
           Muhammad Waqas
           <small>frontend &amp; wordpress developer</small>
         </div>
       </div>
+
       <ul class="navlinks">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -454,9 +347,15 @@ header{
         <li><a href="experience.html">Experience</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="resume.html">Resume</a></li>
-
       </ul>
-       <a href="file:///C:/Users/desig/Desktop/Waqas%20Developer/contact.html"><button class="navcta">Contact Us</button></a>
+
+      <a href="contact.html" class="desktop-contact">
+        <button class="navcta">Contact Us</button>
+      </a>
+
+      <!-- Mobile menu button -->
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
     </nav>
   </div>
 </header>
