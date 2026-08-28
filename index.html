@@ -10,31 +10,37 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-
 <header>
   <div class="wrap">
     <nav>
       <div class="logo">
         <div class="mark">MW</div>
-        <div>
+        <div class="logo-text">
           Muhammad Waqas
           <small>frontend &amp; wordpress developer</small>
         </div>
       </div>
-      <ul class="navlinks">
-        <li><a href=" index.html">Home</a></li>
-        <li><a href=" about.html">About</a></li>
-        <li><a href=" skills.html">Skills</a></li>
-        <li><a href=" projects.html">Projects</a></li>
-        <li><a href=" experience.html">Experience</a></li>
-        <li><a href=" contact.html">Contact</a></li>
-        <li><a href=" resume.html">Resume</a></li>
 
+      <ul class="navlinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="resume.html">Resume</a></li>
       </ul>
-      <a href="file:///C:/Users/desig/Desktop/Waqas%20Developer/contact.html"><button class="navcta">Contact Us</button></a>
+
+      <a href="contact.html" class="desktop-contact">
+        <button class="navcta">Contact Us</button>
+      </a>
+      <!-- Mobile menu button -->
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
     </nav>
   </div>
 </header>
+
     
                  <!------------------------------------------------------- hero sectio ------------------------------------------------------->
 
@@ -155,7 +161,7 @@
         <div class="floating-icon">✓</div>
 
         <div>
-          <div class="floating-title">40+ Projects</div>
+          <!-- <div class="floating-title">40+ Projects</div> -->
           <div class="floating-sub">Delivered on time</div>
         </div>
 
