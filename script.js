@@ -56,3 +56,13 @@ navLinks.forEach(link => {
     link.classList.add("active");
   }
 });
+// =============================
+// MOBILE MENU TOGGLE
+// =============================
+function toggleMenu() {
+  const menu = document.querySelector(".navlinks");
+
+  if (menu) {
+    menu.classList.toggle("active");
+  }
+}
