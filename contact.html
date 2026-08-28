@@ -10,14 +10,30 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style type="text/css">
 
+html,
+body {
+  background: #000;
+}
+
+@keyframes liningBoxMove {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 100px 100px, 100px 100px;
+  }
+}
+
 .custom-contact {
   width: 100%;
   min-height: 100vh;
   position: relative;
   overflow: hidden;
-  background: #111111;
-  background-image: linear-gradient( to right, rgba(255, 255, 255, 0.055) 1px, transparent 1px ), linear-gradient( to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px );
+  background-color: #000;
+  background-image: linear-gradient( to right, rgba(94, 234, 212, 0.12) 1px, transparent 1px ), linear-gradient( to bottom, rgba(94, 234, 212, 0.08) 1px, transparent 1px );
   background-size: 100px 100px;
+  animation: liningBoxMove 12s linear infinite;
+  isolation: isolate;
 }
 
 .custom-contact::before {
@@ -375,7 +391,7 @@
   min-height: 100vh;
   position: relative;
   overflow: hidden;
-  background: #07090a;
+  background: #000;
   color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
   padding: 90px 0;
@@ -390,14 +406,14 @@
   object-fit: cover;
   filter: blur(12px);
   transform: scale(1.12);
-  opacity: 0.32;
+  display: none;
   z-index: 0;
 }
 
 .reach-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient( circle at 50% 40%, rgba(126, 231, 255, 0.09), transparent 45% ), rgba(5, 7, 8, 0.88);
+  background: radial-gradient( circle at 50% 40%, rgba(94, 234, 212, 0.08), transparent 45% ), #000;
   z-index: 1;
 }
 
@@ -405,10 +421,18 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: linear-gradient( 90deg, rgba(255,255,255,.035) 1px, transparent 1px ), linear-gradient( rgba(255,255,255,.025) 1px, transparent 1px );
+  background-image: linear-gradient( 90deg, rgba(94, 234, 212, 0.12) 1px, transparent 1px ), linear-gradient( rgba(94, 234, 212, 0.08) 1px, transparent 1px );
   background-size: 100px 100px;
+  animation: liningBoxMove 12s linear infinite;
   pointer-events: none;
   z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .custom-contact,
+  .reach-section::after {
+    animation: none;
+  }
 }
 
 .reach-container {
