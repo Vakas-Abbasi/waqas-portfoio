@@ -368,6 +368,7 @@
   }
 }/* ============ WORD SLIDER SECTION ============ */
 .about-slider{
+  font-family: sans-serif;
   padding:120px 0;
   text-align:center;
 }
@@ -398,6 +399,47 @@
 @media (prefers-reduced-motion: reduce){
   .stat-card{transition:none;}
   .slider-word{transition:none;}
+}
+/* =============================
+   FORCE CENTER FIX (MOBILE)
+============================= */
+@media (max-width: 560px) {
+
+  .mw-about-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 🔥 center everything */
+  }
+
+  .mw-about-visual,
+  .mw-about-content {
+    width: 100%;
+    max-width: 520px; /* clean centered width */
+    margin: 0 auto;
+  }
+
+  .mw-about-content {
+    text-align: center; /* content bhi center */
+  }
+
+  .mw-skill-list {
+    justify-content: center; /* skills center */
+  }
+
+  .mw-code-decoration {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mw-about-button {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
    /*------------------------------------------------------------------------------------- contact  */
  *
