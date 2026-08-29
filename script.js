@@ -66,3 +66,17 @@ function toggleMenu() {
     menu.classList.toggle("active");
   }
 }
+// =============================
+// CLOSE MENU ON OUTSIDE CLICK
+// =============================
+document.addEventListener("click", function (e) {
+  const menu = document.querySelector(".navlinks");
+  const toggleBtn = document.querySelector(".menu-toggle"); // tumhara 3-dot button
+
+  if (menu && menu.classList.contains("active")) {
+    // agar click menu ya button pe nahi hua
+    if (!menu.contains(e.target) && !toggleBtn.contains(e.target)) {
+      menu.classList.remove("active");
+    }
+  }
+});
